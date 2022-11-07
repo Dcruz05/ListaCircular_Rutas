@@ -60,7 +60,7 @@ class ListaCircular{
         let lista="";
         let res = this.buscar(baseI)
         if(res==null){
-            return "La base de inicio no existe";
+            return `La base de inicio \"${baseI}\" no existe`;
         }
         let aux = res
         let inicio=(horaI*60)+minutosI
@@ -97,6 +97,12 @@ console.log(miRuta.buscar("Base 6"));
 miRuta.eliminar("Base 6")
 console.log(miRuta.imprimir());
 console.log(miRuta.recorrido("Base 3",1,2,5,50));
-b = new Base("Base 7",15);
+b = new Base("Base 7",5);
+miRuta.agregar(b);
+b = new Base("Base 8",15);
+miRuta.agregar(b);
+b = new Base("Base 123",10);
 miRuta.agregar(b);
 console.log(miRuta.imprimir());
+console.log(miRuta.recorrido("Base 123",4,20,12,30));
+console.log(miRuta.recorrido("Base 9",1,0,12,50));
